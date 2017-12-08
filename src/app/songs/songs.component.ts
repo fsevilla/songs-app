@@ -10,7 +10,7 @@ import { SongService } from './song.service';
 export class SongsComponent implements OnInit {
 
   public songName: string;
-  public songs:Array<string> = [];
+  public songs:Array<any> = [];
 
   constructor(private _songService: SongService) { }
 
@@ -24,11 +24,13 @@ export class SongsComponent implements OnInit {
   }
 
   getSongs() {
-  	this.songs = [
-  		'cancion 1',
-  		'cancion 2',
-  		'cancion 3'
-  	];
+  	this._songService.getSongs()
+      .then(response => {
+        this.songs = response;
+      })
+      .catch(err => {
+        console.log('Algo falló');
+      });
   }
 
 }
