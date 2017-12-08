@@ -1,0 +1,7 @@
+<form (submit)="addSong($event)">
+	<input placeholder="Escribe tu cancion..." name="whatever" type="text" [(ngModel)]="songName">
+	<button>Agregar</button>
+</form>
+<ul>
+	<li *ngFor="let song of songs">{{song}}</li>
+</ul>
