@@ -5,7 +5,7 @@
 
 <ul>
 	<li *ngFor="let artist of artistsList">
-		<a routerLink="/albums">
+		<a routerLink="/artist/{{artist.name}}/albums">
 			{{artist.name}}
 		</a>
 	</li>

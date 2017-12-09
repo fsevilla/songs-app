@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ArtistService } from './../artist.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-albums',
@@ -11,14 +12,20 @@ export class AlbumsComponent implements OnInit {
   public artistName:string = 'Cher';
   public albumsList:Array<any> = [];
 
-  constructor(private _artistService: ArtistService) { }
+  constructor(
+    private _artistService: ArtistService,
+    private _route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
-  	this.getAlbums();
+    this._route.params.subscribe(params => {
+      this.artistName = params.name;
+      this.getAlbums(params.name);
+    });
   }
 
-  getAlbums() {
-  	this._artistService.getTopAlbums(this.artistName)
+  getAlbums(artistName:string) {
+  	this._artistService.getTopAlbums(artistName)
   		.then(response => {
   			this.albumsList = response;
   		})
