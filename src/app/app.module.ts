@@ -7,18 +7,30 @@ import { AppComponent } from './app.component';
 import { SongsComponent } from './songs/songs.component';
 
 import { SongService } from './songs/song.service';
+import { ArtistsComponent } from './artists/artists.component';
+import { SongDetailsComponent } from './songs/song-details/song-details.component';
+import { ArtistService } from './artists/artist.service';
+import { AlbumsComponent } from './artists/albums/albums.component';
+import { routing } from './app.routing';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SongsComponent
+    SongsComponent,
+    ArtistsComponent,
+    SongDetailsComponent,
+    AlbumsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
-  providers: [SongService],
+  providers: [
+    SongService,
+    ArtistService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

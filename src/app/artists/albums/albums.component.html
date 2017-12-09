@@ -1,0 +1,7 @@
+<h2>Albums de {{artistName}}</h2>
+<a routerLink="/artists">Regresar...</a>
+<ul>
+	<li *ngFor="let album of albumsList">
+		{{album.name}}
+	</li>
+</ul>

@@ -11,6 +11,7 @@ export class SongsComponent implements OnInit {
 
   public songName: string;
   public songs:Array<any> = [];
+  public error:boolean;
 
   constructor(private _songService: SongService) { }
 
@@ -29,7 +30,7 @@ export class SongsComponent implements OnInit {
         this.songs = response;
       })
       .catch(err => {
-        console.log('Algo falló');
+        this.error = true;
       });
   }
 
