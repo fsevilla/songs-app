@@ -27,7 +27,14 @@ export class ArtistService {
   	const url = this.getUrl('gettopalbums', artist);
   	return this._http.get(url)
   		.map(response => {
-  			return response.json().topalbums.album;
+        try{
+          return response.json().topalbums.album;
+        } catch(e) {
+          return {
+            error: true,
+            errorCode: response.json().error
+          }
+        }
   		})
   		.toPromise();
   }

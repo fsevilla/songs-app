@@ -27,7 +27,11 @@ export class AlbumsComponent implements OnInit {
   getAlbums(artistName:string) {
   	this._artistService.getTopAlbums(artistName)
   		.then(response => {
-  			this.albumsList = response;
+        if(!response.error) {
+          this.albumsList = response;          
+        } else {
+          console.log('No existe', this.artistName);
+        }
   		})
   		.catch(err => {
   			console.log('Error: ', err);

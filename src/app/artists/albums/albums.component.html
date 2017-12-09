@@ -2,7 +2,7 @@
 <a routerLink="/artists">Regresar...</a>
 <ul>
 	<li *ngFor="let album of albumsList">
-		<a routerLink="{{album.name}}">
+		<a style="color: red" routerLink="{{album.name}}">
 			{{album.name}}
 		</a>
 	</li>
