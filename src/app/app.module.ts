@@ -7,7 +7,6 @@ import { BsDropdownModule } from 'ng-bootstrap/dropdown';
 import { AppComponent } from './app.component';
 
 import { ArtistsComponent } from './artists/artists.component';
-import { SongDetailsComponent } from './songs/song-details/song-details.component';
 import { ArtistService } from './artists/artist.service';
 import { AlbumsComponent } from './artists/albums/albums.component';
 import { routing } from './app.routing';
@@ -19,7 +18,6 @@ import { HeaderComponent } from './header/header.component';
   declarations: [
     AppComponent,
     ArtistsComponent,
-    SongDetailsComponent,
     AlbumsComponent,
     AlbumDetailsComponent,
     HeaderComponent
