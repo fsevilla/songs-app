@@ -1,0 +1,12 @@
+<div *ngIf="album">
+	<h1>Album {{album.name}}</h1>
+	<a routerLink="/artist/{{artistName}}/albums">Volver a albums</a>
+	<img src="{{album.image[2]['#text']}}" alt="album image">
+	<div *ngIf="album.wiki">
+		<p [innerHTML]="album.wiki.summary">
+		</p>
+		<p [innerHTML]="album.wiki.content">
+		</p>
+	</div>
+
+</div>

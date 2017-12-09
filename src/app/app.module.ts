@@ -12,6 +12,8 @@ import { SongDetailsComponent } from './songs/song-details/song-details.componen
 import { ArtistService } from './artists/artist.service';
 import { AlbumsComponent } from './artists/albums/albums.component';
 import { routing } from './app.routing';
+import { AlbumDetailsComponent } from './artists/albums/album-details/album-details.component';
+import { AlbumService } from './artists/albums/album.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { routing } from './app.routing';
     SongsComponent,
     ArtistsComponent,
     SongDetailsComponent,
-    AlbumsComponent
+    AlbumsComponent,
+    AlbumDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,8 @@ import { routing } from './app.routing';
   ],
   providers: [
     SongService,
-    ArtistService
+    ArtistService,
+    AlbumService
   ],
   bootstrap: [AppComponent]
 })
